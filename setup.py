@@ -22,7 +22,7 @@ setup(
         "opencv-python==4.5.1.48",
         
         # 3D 렌더링
-        "pyrender==0.1.43",
+        "pyrender==0.1.45",
         "trimesh==3.9.29",
         "PyOpenGL==3.1.4",
         "PyOpenGL_accelerate",
