@@ -31,7 +31,7 @@ if 'Ubuntu' in platform.version():
     os.environ['PYOPENGL_PLATFORM'] = 'osmesa'
 else:
     print('In other system, using egl mode for rendering')
-os.environ['PYOPENGL_PLATFORM'] = 'egl'
+    os.environ['PYOPENGL_PLATFORM'] = 'egl'
 
 
 colors = {
