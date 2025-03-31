@@ -25,12 +25,12 @@ import numpy as np
 import cv2
 import os
 import trimesh
-# import platform
-# if 'Ubuntu' in platform.version():
-#     print('In Ubuntu, using osmesa mode for rendering')
-#     os.environ['PYOPENGL_PLATFORM'] = 'osmesa'
-# else:
-#     print('In other system, using egl mode for rendering')
+import platform
+if 'Ubuntu' in platform.version():
+    print('In Ubuntu, using osmesa mode for rendering')
+    os.environ['PYOPENGL_PLATFORM'] = 'osmesa'
+else:
+    print('In other system, using egl mode for rendering')
 os.environ['PYOPENGL_PLATFORM'] = 'egl'
 
 
@@ -103,7 +103,8 @@ def imagearray2file(img_array, outpath=None, fps=30):
                 while not os.path.exists(cur_outpath): continue  # wait until the snapshot is written to the disk
         elif ext == 'gif':
             import imageio
-            with imageio.get_writer(outpath, mode='I', fps = fps) as writer:
+            duration = (1000 * 1/fps)
+            with imageio.get_writer(outpath, mode='I', duration = duration) as writer:
                 for tIdx in range(T):
                     img = out_images[tIdx].astype(np.uint8)
                     img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
