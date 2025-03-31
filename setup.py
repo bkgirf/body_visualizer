@@ -23,7 +23,7 @@ setup(
         
         # 3D 렌더링
         "pyrender==0.1.43",
-        "trimesh==3.9.5",
+        "trimesh==3.9.29",
         "PyOpenGL==3.1.0",
         "PyOpenGL_accelerate",
         
