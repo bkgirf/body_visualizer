@@ -26,12 +26,10 @@ import cv2
 import os
 import trimesh
 import platform
-if 'Ubuntu' in platform.version():
-    print('In Ubuntu, using osmesa mode for rendering')
+
+if not os.environ.get('PYOPENGL_PLATFORM'):
     os.environ['PYOPENGL_PLATFORM'] = 'osmesa'
-else:
-    print('In other system, using egl mode for rendering')
-    os.environ['PYOPENGL_PLATFORM'] = 'egl'
+print(f"PYOPENGL platform : {os.environ.get('PYOPENGL_PLATFORM')}")
 
 
 colors = {
