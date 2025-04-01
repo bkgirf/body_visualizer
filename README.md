@@ -1,7 +1,8 @@
 # Body Visualizer
 ![alt text](support_data/vposer_samples.png "Novel Human Poses Sampled From the VPoser.")
 ## Description
-Set of tools to visualize and render SMPL family body parameters.
+Set of tools to visualize and render SMPL family body parameters.   
+This is a fork version for motion transfer gan.
 
 ## Table of Contents
   * [Description](#description)
